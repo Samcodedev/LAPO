@@ -10,13 +10,11 @@ const data = [
 const CardScheme = () => {
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
-      {/* Heading */}
       <div className="mb-4">
         <h2 className="text-xl font-semibold">Card Scheme</h2>
         <p className="text-gray-500">Add, view and edit card schemes here.</p>
       </div>
 
-      {/* Search and Button */}
       <div className="flex justify-between items-center mb-4">
         <div className="relative w-1/3">
           <FiSearch className="absolute left-3 top-3 text-gray-400" />
@@ -31,7 +29,6 @@ const CardScheme = () => {
         </button>
       </div>
 
-      {/* Table */}
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
         <table className="w-full border-collapse">
           <thead className="bg-gray-100 text-gray-600 text-left">

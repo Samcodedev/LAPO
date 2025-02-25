@@ -20,7 +20,7 @@ function PieCharts({ title }) {
                     data={data}
                     cx="50%"
                     cy="50%"
-                    innerRadius={80} // Donut effect
+                    innerRadius={80}
                     outerRadius={100}
                     dataKey="value"
                     label={false}

@@ -25,13 +25,9 @@ import Cardinfra from '../assets/icons/cardinfra logo.png'
 function SideBar({setSidebarSelected}) {
     const [selected, setSelected] = useState('Dashboard')
 
-    // const handleSidebarSelected = (selected) => {
-        
-    // }
     useEffect(() => {
         setSidebarSelected(selected)   
         console.log(selected)
-        // handleSidebarSelected(selected)
     }, [selected])
 
 
