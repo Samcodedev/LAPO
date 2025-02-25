@@ -4,7 +4,7 @@ import warning from '../assets/icons/alert-circle.svg'
 
 function AnalyticsCard({ title, value, icon, change, time }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow border border-[#E2E2E2]">
+    <div className="bg-white p-6 rounded-lg border border-[#E2E2E2]">
         <div className="flex flex-col items-start justify-start mb-4">
             <img src={icon} alt={title} className='w-5' />
             <h3 className="text-lg font-semibold opacity-50">{title}</h3>

@@ -12,7 +12,7 @@ function RecentCardRequests() {
   ];
 
   return (
-    <div className="p-4 bg-white rounded-xl shadow-md">
+    <div className="p-4 bg-white rounded-xl border border-[#E2E2E2]">
         <div className='flex items-center justify-between'>
             <h2 className="text-lg font-semibold mb-4">Recent Card Requests</h2>
             <img src={maximize} alt="maximize" />

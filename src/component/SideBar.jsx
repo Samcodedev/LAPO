@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import LAPO from '../assets/LAPO_Logo_2022-removebg-preview 1.png'
 import dashboard from '../assets/icons/home.svg'
 import branch from '../assets/icons/building-06.svg'
@@ -22,9 +22,19 @@ import Cardinfra from '../assets/icons/cardinfra logo.png'
 
 
 
-function SideBar() {
+function SideBar({setSidebarSelected}) {
     const [selected, setSelected] = useState('Dashboard')
-    
+
+    // const handleSidebarSelected = (selected) => {
+        
+    // }
+    useEffect(() => {
+        setSidebarSelected(selected)   
+        console.log(selected)
+        // handleSidebarSelected(selected)
+    }, [selected])
+
+
   return (
     <div className="w-64 bg-white p-4 border-r border-r-[#DEDEDF]">
         <div className="flex items-center mb-8">

@@ -7,7 +7,7 @@ import reviewCardRequests from '../assets/icons/Frame 1618867976.svg'
 
 function QuickAccess() {
   return (
-    <div className="bg-white border border-[#E2E2E2] p-6 rounded-xl shadow mb-6">
+    <div className="bg-white border border-[#E2E2E2] p-6 rounded-xl mb-6">
         <h2 className="text-xl font-semibold -mt-2 mb-2">Your Quick Access</h2>
         <div className="flex mt-5 space-x-4">
             <button className="flex-1 bg-[#F1F7FF] text-[#121212] font-medium py-3 px-6 rounded-lg flex items-center gap-3">
