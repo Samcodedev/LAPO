@@ -12,7 +12,7 @@ function LineCharts({ title }) {
       { name: "Sun", income: 85 },
     ];
   return (
-    <div className="bg-white p-6 rounded-lg border border-[#E2E2E2]">
+    <div className="bg-white p-6 rounded-xl border border-[#E2E2E2]">
         <h3 className="text-lg font-semibold mb-4">{title}</h3>
         <ResponsiveContainer width="100%" height={300}>
             <LineChart data={data}>

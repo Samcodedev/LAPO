@@ -12,7 +12,7 @@ function ChartCard({ title }) {
     { name: "Nov", Personalized: 10, Instant: 60 },
   ];
   return (
-    <div className="bg-white p-6 rounded-lg border border-[#E2E2E2]">
+    <div className="bg-white p-6 rounded-xl border border-[#E2E2E2]">
         <h3 className="text-lg font-semibold mb-4">{title}</h3>
         <ResponsiveContainer width="100%" height={300} padding={0}>
           <BarChart data={data} barSize={40}>

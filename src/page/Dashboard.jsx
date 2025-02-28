@@ -10,21 +10,37 @@ import LineCharts from "../component/LineCharts";
 import { FiTrash2, FiEdit2, FiSearch, FiPlus } from "react-icons/fi";
 import CardSchemeModal from "../component/CardSchemeModal";
 import CardRequest from "../component/CardRequest";
+import CardRequestDetails from "../component/RequestDetails";
+import Success from "../component/Success";
+import CardProfile from "../component/CardProfile";
+import ProfileDetails from "../component/ProfileDetails";
+import AddProfile from "../component/AddProfile";
+import CardScheme from "../component/CardScheme";
 
 function Dashboard() {
-  const [SidebarSelected, setSidebarSelected] = useState("Dashboard");
+  const [SidebarSelected, setSidebarSelected] = useState("Request Details");
   const data = [
-    { scheme: "Verve", panLength: 18 },
-    { scheme: "Verve", panLength: 18 },
-    { scheme: "Verve", panLength: 18 },
+    { scheme: "Verve1", panLength: 18 },
+    { scheme: "Verve2", panLength: 18 },
+    { scheme: "Verve3", panLength: 18 },
   ];
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [RequestDetails, setRequestDetails] = useState()
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false)
+  const [isAddProfileOpen, setIsAddProfileOpen] = useState(false)
+  const [searchTerm, setSearchTerm] = useState("")
+  const [editingScheme, setEditingScheme] = useState(null);
+
+
+
 
   return (
     <div className="flex">
       <Sidebar setSidebarSelected={setSidebarSelected} />
       <div className="flex-1 bg-[#F8FBFF]">
-        <Header />
+        <Header  
+          title={SidebarSelected}
+        />
         {SidebarSelected === "Dashboard" && (
           <div>
             <div className="px-5 -mt-3">
@@ -69,77 +85,43 @@ function Dashboard() {
           </div>
         )}
         {SidebarSelected === "Card Scheme" && (
-          <div className="px-6 bg-gray-50 min-h-screen">
-            <div className="mb-4">
-              <h2 className="text-xl font-bold mb-2">Card Scheme</h2>
-              <p className="text-gray-500 -mt-1 mb-2">
-                Add, view and edit card schemes here.
-              </p>
-            </div>
-            <hr className="w-full border-t border-[#98A2B3] mb-4" />
-
-            <div className="flex justify-between items-center mb-4">
-              <div className="relative w-1/3">
-                <FiSearch className="absolute left-3 top-3 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search by scheme name"
-                  className="w-[400px] pl-10 pr-4 py-2 border border-[#D0D5DD] bg-white rounded-md focus:ring-2 focus:ring-blue-300 focus:outline-none"
-                />
-              </div>
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="bg-[#014DAF] text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-[#014DAF] cursor-pointer"
-              >
-                <FiPlus /> Add Scheme
-              </button>
-            </div>
-
-            <hr className="w-full border-t border-[#98A2B3] mb-4" />
-
-            <div className="bg-white rounded-sm overflow-hidden">
-              <table className="w-full border-collapse">
-                <thead className="bg-[#F9FAFB] font-extralight text-[#475467] border border-[#EAECF0] text-left">
-                  <tr>
-                    <th className="p-3 border-r border-[#EAECF0]">
-                      Scheme Name
-                    </th>
-                    <th className="p-3 border-r border-[#EAECF0]">
-                      PAN Length
-                    </th>
-                    <th className="p-3">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.map((row, index) => (
-                    <tr key={index} className="border border-[#EAECF0]">
-                      <td className="p-3 border-r border-[#EAECF0]">
-                        {row.scheme}
-                      </td>
-                      <td className="p-3 border-r border-[#EAECF0]">
-                        {row.panLength}
-                      </td>
-                      <td className="p-3 flex gap-3">
-                        <button className="text-[#475467]">
-                          <FiTrash2 />
-                        </button>
-                        <button className="text-[#475467]">
-                          <FiEdit2 />
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <CardScheme 
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+            editingScheme={editingScheme}
+            setEditingScheme={setEditingScheme}
+          />
         )}
         <CardSchemeModal
           isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
+          onClose={() => {
+            setIsModalOpen(false);
+            setEditingScheme(null);
+          }}
+          editingScheme={editingScheme}
+        />
+        {SidebarSelected === "Card Profile" && (
+          <CardProfile 
+            setSidebarSelected={setSidebarSelected}
+          />
+        )}
+        {SidebarSelected === "Create Profile" && (
+          <ProfileDetails 
+            setIsAddProfileOpen={setIsAddProfileOpen}
+          />
+        )}
+        <AddProfile 
+            isOpen={isAddProfileOpen}
+            onClose={()=> setIsAddProfileOpen(false)}
         />
 
-        {SidebarSelected === "Card Request" && <CardRequest />}
+        {SidebarSelected === "Card Request" && <CardRequest setSidebarSelected={setSidebarSelected} />}
+        {SidebarSelected === "Request Details" && <CardRequestDetails setIsSuccessOpen={setIsSuccessOpen} />}
+        <Success 
+          isOpen={isSuccessOpen}
+          onClose={() => setIsSuccessOpen(false)}
+        />
+
       </div>
     </div>
   );

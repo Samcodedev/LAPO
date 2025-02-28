@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 
-const CardRequest = () => {
+const CardRequest = ({setSidebarSelected}) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const data = [
@@ -95,18 +95,18 @@ const CardRequest = () => {
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       item.status === "Ready"
-                        ? "bg-green-100 text-green-700 border border-green-300"
+                        ? "bg-[#ECFDF3] text-[#067647] border border-[#ABEFC6]"
                         : item.status === "In Progress"
-                        ? "bg-yellow-100 text-yellow-700 border border-yellow-300"
+                        ? "bg-[#FFFAEB] text-[#B54708] border border-[#FEDF89]"
                         : item.status === "Pending"
-                        ? "bg-gray-100 text-gray-700 border border-gray-300"
-                        : "bg-blue-100 text-blue-700 border border-blue-300"
+                        ? "bg-[#F9FAFB] text-[#344054] border border-[#EAECF0]"
+                        : "bg-[#EFF8FF] text-[#175CD3] border border-[#B2DDFF]"
                     }`}
                   >
                     {item.status}
                   </span>
                 </td>
-                <td className="p-3 border border-[#EAECF0] text-blue-600 cursor-pointer">
+                <td onClick={()=> setSidebarSelected('Request Details')} className="p-3 border border-[#EAECF0] font-medium text-[#014DAF] cursor-pointer">
                   View
                 </td>
               </tr>

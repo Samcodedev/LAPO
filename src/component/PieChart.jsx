@@ -12,7 +12,7 @@ const data = [
 
 function PieCharts({ title }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow">
+    <div className="bg-white p-6 rounded-xl border border-[#E2E2E2]">
         <h3 className="text-lg font-semibold mb-4">{title}</h3>
         <div className='flex items-center justify-center'>
             <PieChart width={400} height={300}>
