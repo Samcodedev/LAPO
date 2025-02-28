@@ -12,7 +12,7 @@ const CardScheme = ({ setIsModalOpen, setEditingScheme, isModalOpen, editingSche
     try {
       setIsLoading(true);
       const token = localStorage.getItem('LAPO-ACCESS-TOKEN');
-      const response = await fetch("http://localhost:3001/api/scheme/", {
+      const response = await fetch("https://lapo-back-end.onrender.com/api/scheme/", {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -32,7 +32,7 @@ const CardScheme = ({ setIsModalOpen, setEditingScheme, isModalOpen, editingSche
     if (window.confirm("Are you sure you want to delete this scheme?")) {
       try {
         const token = localStorage.getItem('LAPO-ACCESS-TOKEN');
-        await fetch(`http://localhost:3001/api/scheme/${schemeId}`, {
+        await fetch(`https://lapo-back-end.onrender.com/api/scheme/${schemeId}`, {
           method: "DELETE",
           headers: {
             'Authorization': `Bearer ${token}`

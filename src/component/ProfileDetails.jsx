@@ -71,7 +71,7 @@ function ProfileDetails({ editingCard, setSidebarSelected }) {
       };
 
       if (editingCard) {
-        const response = await fetch(`http://localhost:3001/api/card/${editingCard._id}`, {
+        const response = await fetch(`https://lapo-back-end.onrender.com/api/card/${editingCard._id}`, {
           method: "PUT",
           headers: {
             'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ function ProfileDetails({ editingCard, setSidebarSelected }) {
         setMessage({ text: data.message || "Card updated successfully!", type: "success" });
         setTimeout(() => setSidebarSelected('Card Profile'), 1500);
       } else {
-        const response = await fetch("http://localhost:3001/api/card/", {
+        const response = await fetch("https://lapo-back-end.onrender.com/api/card/", {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',

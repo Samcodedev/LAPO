@@ -14,7 +14,7 @@ function CardProfile({ setSidebarSelected }) {
       setMessage({ text: "", type: "" });
       
       const token = localStorage.getItem('LAPO-ACCESS-TOKEN');
-      const response = await fetch("http://localhost:3001/api/card/", {
+      const response = await fetch("https://lapo-back-end.onrender.com/api/card/", {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -41,7 +41,7 @@ function CardProfile({ setSidebarSelected }) {
       try {
         setMessage({ text: "", type: "" });
         const token = localStorage.getItem('LAPO-ACCESS-TOKEN');
-        const response = await fetch(`http://localhost:3001/api/card/${cardId}`, {
+        const response = await fetch(`https://lapo-back-end.onrender.com/api/card/${cardId}`, {
           method: "DELETE",
           headers: {
             'Authorization': `Bearer ${token}`

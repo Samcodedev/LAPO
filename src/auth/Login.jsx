@@ -25,7 +25,7 @@ const Login = () => {
     setMessage({ text: "", type: "" });
 
     try {
-      const response = await fetch('http://localhost:3001/api/user/login', {
+      const response = await fetch('https://lapo-back-end.onrender.com/api/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

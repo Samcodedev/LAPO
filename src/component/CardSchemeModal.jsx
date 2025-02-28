@@ -29,7 +29,7 @@ const CardSchemeModal = ({ isOpen, onClose, editingScheme, onSuccess }) => {
       
       if (editingScheme) {
         // Update existing scheme
-        await fetch(`http://localhost:3001/api/scheme/${editingScheme._id}`, {
+        await fetch(`https://lapo-back-end.onrender.com/api/scheme/${editingScheme._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const CardSchemeModal = ({ isOpen, onClose, editingScheme, onSuccess }) => {
         });
       } else {
         // Create new scheme
-        await fetch("http://localhost:3001/api/scheme/", {
+        await fetch("https://lapo-back-end.onrender.com/api/scheme/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
