@@ -27,7 +27,7 @@ function SideBar({setSidebarSelected}) {
 
     useEffect(() => {
         setSidebarSelected(selected)   
-        console.log(selected)
+        console.log(selected)       
     }, [selected])
 
 

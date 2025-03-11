@@ -7,7 +7,7 @@ import ChartCard from "../component/ChartCard";
 import RecentCardRequests from "../component/RecentCardRequests";
 import PieCharts from "../component/PieChart";
 import LineCharts from "../component/LineCharts";
-import { FiTrash2, FiEdit2, FiSearch, FiPlus } from "react-icons/fi";
+// import { FiTrash2, FiEdit2, FiSearch, FiPlus } from "react-icons/fi";
 import CardSchemeModal from "../component/CardSchemeModal";
 import CardRequest from "../component/CardRequest";
 import CardRequestDetails from "../component/RequestDetails";
@@ -18,7 +18,7 @@ import AddProfile from "../component/AddProfile";
 import CardScheme from "../component/CardScheme";
 
 function Dashboard() {
-  const [SidebarSelected, setSidebarSelected] = useState("Request Details");
+  const [SidebarSelected, setSidebarSelected] = useState("Dashboard");
   const data = [
     { scheme: "Verve1", panLength: 18 },
     { scheme: "Verve2", panLength: 18 },

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/LAPO_Logo_2022-removebg-preview 1.png'
 import image from '../assets/Login Card.png'
 
+  alert(`userName: samcode and password: samcode.0406`)
 const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -18,6 +19,15 @@ const Login = () => {
       [e.target.name]: e.target.value
     });
   };
+
+  useEffect(() => {
+      const token = localStorage.getItem('LAPO-ACCESS-TOKEN')
+
+      if (token) {
+        return navigate('/dashboard')
+      }
+  })
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
